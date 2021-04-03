@@ -4,7 +4,7 @@ void sort_merge(int arr[],int low, int mid, int right);
 
 int main(int argc, char* argv){
 	int array[10] = {4,8,1,3,9,7,5,6,2,10};
-        int len = *(&array + 1) - array;
+    int len = *(&array + 1) - array;
 	divide(array,0,len-1);
 	for (int i = 0; i < len; i++)
 	{
