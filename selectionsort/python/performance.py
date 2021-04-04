@@ -7,8 +7,8 @@ MAX_ELEMENT = 10000
 PROGRAM = "SELSORT"
 
 num_of_test_cases = 100
-with open('python_performance.csv', 'w', newline='') as csvfile:
-	header = ['program_type','number_of_items','start_time','end_time','time_taken']
+with open('performance.csv', 'w', newline='') as csvfile:
+	header = ['program_type','number_of_items','start_time','end_time','time_taken','test_result']
 	csvwriter = csv.DictWriter(csvfile, fieldnames=header)
 	csvwriter.writeheader()
 	while num_of_test_cases > 0:
@@ -24,7 +24,8 @@ with open('python_performance.csv', 'w', newline='') as csvfile:
 		initiate_sel_sort(jumbled_list,len(jumbled_list))
 		end_time = datetime.now()
 		d['end_time'] = end_time.strftime('%Y-%m-%d %H:%M:%S')
-		d['time_taken'] = (end_time - start_time).seconds
+		d['time_taken'] = f"{(end_time - start_time).total_seconds()*1000:.3f}"
+		d['test_result'] = jumbled_list == sorted_list
 		csvwriter.writerow(d)
 		num_of_test_cases -= 1
 
