@@ -1,0 +1,3 @@
+/home/bodhi/Documents/algorithms/selectionsort/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/bodhi/Documents/algorithms/selectionsort/cpp/build/CMakeFiles/main.dir
+/home/bodhi/Documents/algorithms/selectionsort/cpp/build/CMakeFiles/edit_cache.dir
