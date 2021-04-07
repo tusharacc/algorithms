@@ -173,8 +173,34 @@ CMakeFiles/main.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/7/bits/codecvt.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/7/bits/c++io.h \
-  /usr/include/c++/7/bits/fstream.tcc
+  /usr/include/c++/7/bits/fstream.tcc \
+  /usr/include/x86_64-linux-gnu/sys/time.h \
+  /usr/include/x86_64-linux-gnu/sys/resource.h \
+  /usr/include/x86_64-linux-gnu/bits/resource.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_rusage.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
 
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_rusage.h:
+
+/usr/include/x86_64-linux-gnu/bits/resource.h:
+
+/usr/include/x86_64-linux-gnu/sys/resource.h:
 
 /usr/include/c++/7/bits/fstream.tcc:
 
@@ -237,6 +263,8 @@ selectionsort.h:
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/c++/7/bits/nested_exception.h:
 
@@ -375,6 +403,8 @@ selectionsort.h:
 /usr/include/x86_64-linux-gnu/bits/libio.h:
 
 /usr/include/c++/7/bits/exception.h:
+
+/usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/x86_64-linux-gnu/c++/7/bits/basic_file.h:
 

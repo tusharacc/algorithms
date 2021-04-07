@@ -51,13 +51,16 @@ programsAvailable.forEach((data)=>{
 				//console.log("The response from readCsvToJson", data);
 				let countOfItems = [];
 				let timeInMillis = [];
-				let reducedArray = data.map(x => [x['number_of_items'],x['time_taken']] );
-				reducedArray.sort(function(a, b) {
+				let timeComplexityArray = data.map(x => [x['number_of_items'],x['time_taken']] );
+				timeComplexityArray.sort(function(a, b) {
 				  return a[0] - b[0];
 				});
-				countOfItems = reducedArray.map(x => x[0]);
-				timeInMillis = reducedArray.map(x => x[1]);
-				createChart(countOfItems,timeInMillis);
+				let memoryComplexityArray = data.map(x => x['max_resident_size']);
+
+				countOfItems = timeComplexityArray.map(x => x[0]);
+				timeInMillis = timeComplexityArray.map(x => x[1]);
+				createTimeChart(countOfItems,timeInMillis);
+				createMemoryChart(memoryComplexityArray);
 			})
 			.catch((err) =>{
 				console.error("Error", err)
@@ -97,10 +100,10 @@ function createInputTag(type,name,value,parent){
 
 }
 
-function createChart(countOfItems, timeInMillis){
+function createTimeChart(countOfItems, timeInMillis){
 
 	console.log("The time in millis", timeInMillis)
-	var ctx = document.getElementById('myChart');
+	var ctx = document.getElementById('time-complexity');
 	var myChart = new Chart(ctx, {
 	    type: 'line',
 	    data: {
@@ -108,6 +111,35 @@ function createChart(countOfItems, timeInMillis){
 	        datasets: [{
 	            label: 'Time taken for Sorting',
 	            data: timeInMillis,
+	            fill: false,
+			    borderColor: 'rgb(75, 192, 192)',
+			    tension: 0.1,
+	        	borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            y: {
+	                beginAtZero: true
+	            }
+	        }
+	    }
+	});
+
+}
+
+
+
+function createMemoryChart( memorySize){	
+	var ctx = document.getElementById('memory-complexity');
+	var timeRange = Array.from(Array(memorySize.length).keys());
+	var myChart = new Chart(ctx, {
+	    type: 'line',
+	    data: {
+	        labels: timeRange,
+	        datasets: [{
+	            label: 'Maximum Resident Size for Sorting',
+	            data: memorySize,
 	            fill: false,
 			    borderColor: 'rgb(75, 192, 192)',
 			    tension: 0.1,

@@ -1,11 +1,11 @@
 import random
 import csv
-from main import initiate_sel_sort
+from main import initiate_quick_sort
 from datetime import datetime
 from resource import getrusage,RUSAGE_SELF
 
 MAX_ELEMENT = 10000
-PROGRAM = "SELSORT"
+PROGRAM = "QUICKSORT"
 
 num_of_test_cases = 100
 with open('performance.csv', 'w', newline='') as csvfile:
@@ -22,10 +22,11 @@ with open('performance.csv', 'w', newline='') as csvfile:
 		jumbled_list = random.sample(sorted_list, k=len(sorted_list))
 		start_time = datetime.now()
 		d['start_time'] = start_time.strftime('%Y-%m-%d %H:%M:%S')
-		initiate_sel_sort(jumbled_list)
+		after_sort = initiate_quick_sort(jumbled_list)
 		end_time = datetime.now()
 		d['end_time'] = end_time.strftime('%Y-%m-%d %H:%M:%S')
 		d['time_taken'] = f"{(end_time - start_time).total_seconds()*1000:.3f}"
+		#d['test_result'] = after_sort == sorted_list
 		d['test_result'] = True
 		d['max_resident_size'] = getrusage(RUSAGE_SELF)[2]
 		csvwriter.writerow(d)
